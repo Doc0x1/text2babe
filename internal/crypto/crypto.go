@@ -10,9 +10,15 @@ import (
 	"io"
 	"strconv"
 	"strings"
-
+    "golang.org/x/crypto/scrypt"
 	"doc0x1/text2babe/internal/config"
 )
+//or store in a .config on usage
+func generateKey(password string) []byte {
+    salt := []byte("fixed-salt") // ideally unique per user/config
+    key, _ := scrypt.Key([]byte(password), salt, 1<<15, 8, 1, 32)
+    return key
+}
 
 func EncryptData(data string, cfg *config.Config) (string, error) {
 	// Always treat input as text
