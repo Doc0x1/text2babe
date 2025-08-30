@@ -16,7 +16,7 @@ A CLI encryption/encoding tool with an interactive shell interface, inspired by 
 
 ```bash
 # Clone the repository
-git clone <repo-url>
+git clone github.com/doc0x1/text2babe
 cd text2babe
 
 # Install dependencies
